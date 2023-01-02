@@ -29,9 +29,3 @@ h1 {
     width: 70vh;
     height: 30vh;
 }
-
-.startbuttoncontainer {
-    display: flex;
-    justify-content: center;
-    align-self: center;
-}

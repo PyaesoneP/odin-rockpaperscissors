@@ -13,21 +13,101 @@ let rockButton = document.querySelector('.rockbutton');
 let paperButton = document.querySelector('.paperbutton');
 let scissorButton = document.querySelector('.scissorsbutton');
 let roundWinner = document.querySelector('.roundwinner');
+let playerScore = 0;
+let computerScore = 0;
 
 rockButton.addEventListener('click', () => {
         playerPick = choices[0];
         roundWinner.textContent = playRound(playerPick, getComputerChoice(choices));
+        if (roundWinner.textContent === 'You lose! Paper beats rock') {
+            computerScore++;
+        } else if (roundWinner.textContent === 'You win! Rock beats scissors') {
+            playerScore++;
+        } else if (roundWinner.textContent === 'You win! Paper beats rock') {
+            playerScore++;
+        } else if (roundWinner.textContent === 'You lose! Scissors beats paper') {
+            computerScore++;
+        } else if (roundWinner.textContent === 'You lose! Rock beats scissors') {
+            computerScore++;
+        } else if (roundWinner.textContent === 'You win! Scissors beats paper') {
+            playerScore++;
+        } else {
+        }
+        console.log(playerScore);
+        console.log(computerScore);
+        if (playerScore === 5) {
+            alert('You win!');
+            playerScore = 0;
+            computerScore = 0;
+        }
+        if (computerScore === 5) {
+            alert('The computer wins!');
+            playerScore = 0;
+            computerScore = 0;
+        }
 });
 
 paperButton.addEventListener('click', () => {
         playerPick = choices[1];
         roundWinner.textContent = playRound(playerPick, getComputerChoice(choices));
-})
+        if (roundWinner.textContent === 'You lose! Paper beats rock') {
+            computerScore++;
+        } else if (roundWinner.textContent === 'You win! Rock beats scissors') {
+            playerScore++;
+        } else if (roundWinner.textContent === 'You win! Paper beats rock') {
+            playerScore++;
+        } else if (roundWinner.textContent === 'You lose! Scissors beats paper') {
+            computerScore++;
+        } else if (roundWinner.textContent === 'You lose! Rock beats scissors') {
+            computerScore++;
+        } else if (roundWinner.textContent === 'You win! Scissors beats paper') {
+            playerScore++;
+        } else {
+        }
+        console.log(playerScore);
+        console.log(computerScore);
+        if (playerScore === 5) {
+            alert('You win!');
+            playerScore = 0;
+            computerScore = 0;
+        }
+        if (computerScore === 5) {
+            alert('The computer wins!');
+            playerScore = 0;
+            computerScore = 0;
+        }
+});
 
 scissorButton.addEventListener('click', () => {
         playerPick = choices[2];
         roundWinner.textContent = playRound(playerPick, getComputerChoice(choices));
-})
+        if (roundWinner.textContent === 'You lose! Paper beats rock') {
+            computerScore++;
+        } else if (roundWinner.textContent === 'You win! Rock beats scissors') {
+            playerScore++;
+        } else if (roundWinner.textContent === 'You win! Paper beats rock') {
+            playerScore++;
+        } else if (roundWinner.textContent === 'You lose! Scissors beats paper') {
+            computerScore++;
+        } else if (roundWinner.textContent === 'You lose! Rock beats scissors') {
+            computerScore++;
+        } else if (roundWinner.textContent === 'You win! Scissors beats paper') {
+            playerScore++;
+        } else {
+        }
+        console.log(playerScore);
+        console.log(computerScore);
+        if (playerScore === 5) {
+            alert('You win!');
+            playerScore = 0;
+            computerScore = 0;
+        }
+        if (computerScore === 5) {
+            alert('The computer wins!');
+            playerScore = 0;
+            computerScore = 0;
+        }
+});
 
 function playRound(playerSelection, computerSelection) {
     playerSelection = playerSelection.toLowerCase();
