@@ -12,20 +12,21 @@ let playerPick = '';
 let rockButton = document.querySelector('.rockbutton');
 let paperButton = document.querySelector('.paperbutton');
 let scissorButton = document.querySelector('.scissorsbutton');
+let roundWinner = document.querySelector('.roundwinner');
 
 rockButton.addEventListener('click', () => {
         playerPick = choices[0];
-        console.log(playRound(playerPick, getComputerChoice(choices)));
+        roundWinner.textContent = playRound(playerPick, getComputerChoice(choices));
 });
 
 paperButton.addEventListener('click', () => {
         playerPick = choices[1];
-        console.log(playRound(playerPick, getComputerChoice(choices)));
+        roundWinner.textContent = playRound(playerPick, getComputerChoice(choices));
 })
 
 scissorButton.addEventListener('click', () => {
         playerPick = choices[2];
-        console.log(playRound(playerPick, getComputerChoice(choices)));
+        roundWinner.textContent = playRound(playerPick, getComputerChoice(choices));
 })
 
 function playRound(playerSelection, computerSelection) {
