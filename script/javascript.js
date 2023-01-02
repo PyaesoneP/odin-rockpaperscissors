@@ -8,6 +8,26 @@ function getComputerChoice(options) {
     return options[Math.floor(Math.random()*3)]
 }
 
+let playerPick = '';
+let rockButton = document.querySelector('.rockbutton');
+let paperButton = document.querySelector('.paperbutton');
+let scissorButton = document.querySelector('.scissorsbutton');
+
+rockButton.addEventListener('click', () => {
+        playerPick = choices[0];
+        console.log(playRound(playerPick, getComputerChoice(choices)));
+});
+
+paperButton.addEventListener('click', () => {
+        playerPick = choices[1];
+        console.log(playRound(playerPick, getComputerChoice(choices)));
+})
+
+scissorButton.addEventListener('click', () => {
+        playerPick = choices[2];
+        console.log(playRound(playerPick, getComputerChoice(choices)));
+})
+
 function playRound(playerSelection, computerSelection) {
     playerSelection = playerSelection.toLowerCase();
     switch (playerSelection) {
@@ -43,36 +63,5 @@ function playRound(playerSelection, computerSelection) {
         
         default:
             return 'Please pick one';
-    }
-}
-
-function game() {
-    let playerScore = 0;
-    let computerScore = 0;
-    for (let i = 0; i < 5; i++) {
-        let playerPick = prompt("Please pick rock, paper or scissors");
-        let result = playRound(playerPick, getComputerChoice(choices));
-        console.log(result);
-        if (result === 'You lose! Paper beats rock') {
-            computerScore++;
-        } else if (result === 'You win! Rock beats scissors') {
-            playerScore++;
-        } else if (result === 'You win! Paper beats rock') {
-            playerScore++;
-        } else if (result === 'You lose! Scissors beats paper') {
-            computerScore++;
-        } else if (result === 'You lose! Rock beats scissors') {
-            computerScore++;
-        } else if (result === 'You win! Scissors beats paper') {
-            playerScore++;
-        } else {
-        }
-    }
-    if (playerScore > computerScore) {
-        console.log('You are the winner!')
-    } else if (playerScore < computerScore) {
-        console.log('The winner is the computer!')
-    } else {
-        console.log('Drawed!')
     }
 }
