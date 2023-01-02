@@ -13,6 +13,22 @@ h1 {
     gap: 50px;
 }
 
+.scorecounter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 15vh;
+    gap: 60px;
+}
+
+.yourscore {
+    font-size: 30px;
+}
+
+.computerscore {
+    font-size: 30px;
+}
+
 .announceround {
     display: flex;
     justify-content: center;
